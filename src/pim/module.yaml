@@ -1,0 +1,4 @@
+code: pim
+name: "Project Intelligence Module"
+description: "Skills for project observation, risk detection, and forecasting"
+default_selected: false
