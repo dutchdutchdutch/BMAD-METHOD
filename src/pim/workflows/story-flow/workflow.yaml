@@ -1,0 +1,22 @@
+# Story Flow Analyzer - Project Intelligence
+name: story-flow
+description: "Diagnose cycle time issues and flow blockers at the story level."
+author: "PIM"
+
+# Critical variables from bmm config
+config_source: "{project-root}/_bmad/bmm/config.yaml"
+implementation_artifacts: "{config_source}:implementation_artifacts"
+
+# Workflow components
+installed_path: "{project-root}/_bmad/pim/workflows/story-flow"
+instructions: "{installed_path}/instructions.md"
+
+# Inputs
+sprint_status_file: "{implementation_artifacts}/sprint-status.yaml"
+
+# Smart input file patterns
+input_file_patterns:
+  sprint_status:
+    description: "Sprint status file for story data"
+    whole: "{implementation_artifacts}/sprint-status.yaml"
+    load_strategy: "FULL_LOAD"

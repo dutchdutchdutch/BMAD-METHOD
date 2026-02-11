@@ -1,0 +1,28 @@
+# Change Summary - Project Intelligence
+name: change-summary
+description: "Summarize changes at Iteration (team) or Delta (reviewer) level."
+author: "PIM"
+
+# Critical variables from bmm config
+config_source: "{project-root}/_bmad/bmm/config.yaml"
+implementation_artifacts: "{config_source}:implementation_artifacts"
+planning_artifacts: "{config_source}:planning_artifacts"
+
+# Workflow components
+installed_path: "{project-root}/_bmad/pim/workflows/change-summary"
+instructions: "{installed_path}/instructions.md"
+
+# Inputs
+sprint_status_file: "{implementation_artifacts}/sprint-status.yaml"
+epics_file: "{planning_artifacts}/epics.md"
+
+# Smart input file patterns
+input_file_patterns:
+  sprint_status:
+    description: "Completed items for iteration summary"
+    whole: "{implementation_artifacts}/sprint-status.yaml"
+    load_strategy: "FULL_LOAD"
+  epics:
+    description: "Scope changes reference"
+    whole: "{planning_artifacts}/epics.md"
+    load_strategy: "FULL_LOAD"

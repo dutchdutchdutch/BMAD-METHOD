@@ -1,0 +1,22 @@
+# Activity Audit - Project Intelligence
+name: activity-audit
+description: "Compare reported status against actual activity (primary: git/code)."
+author: "PIM"
+
+# Critical variables from bmm config
+config_source: "{project-root}/_bmad/bmm/config.yaml"
+implementation_artifacts: "{config_source}:implementation_artifacts"
+
+# Workflow components
+installed_path: "{project-root}/_bmad/pim/workflows/activity-audit"
+instructions: "{installed_path}/instructions.md"
+
+# Inputs
+sprint_status_file: "{implementation_artifacts}/sprint-status.yaml"
+
+# Smart input file patterns
+input_file_patterns:
+  sprint_status:
+    description: "Sprint status file containing reported status"
+    whole: "{implementation_artifacts}/sprint-status.yaml"
+    load_strategy: "FULL_LOAD"

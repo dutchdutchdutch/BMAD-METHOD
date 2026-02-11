@@ -1,0 +1,22 @@
+# Risk Tracker - Project Intelligence
+name: risk-tracker
+description: "Detect and escalate risks and issues from project signals."
+author: "PIM"
+
+# Critical variables from bmm config (assumed available)
+config_source: "{project-root}/_bmad/bmm/config.yaml"
+implementation_artifacts: "{config_source}:implementation_artifacts"
+
+# Workflow components
+installed_path: "{project-root}/_bmad/pim/workflows/risk-tracker"
+instructions: "{installed_path}/instructions.md"
+
+# Inputs
+sprint_status_file: "{implementation_artifacts}/sprint-status.yaml"
+
+# Smart input file patterns
+input_file_patterns:
+  sprint_status:
+    description: "Sprint status file containing blocker and progress data"
+    whole: "{implementation_artifacts}/sprint-status.yaml"
+    load_strategy: "FULL_LOAD"

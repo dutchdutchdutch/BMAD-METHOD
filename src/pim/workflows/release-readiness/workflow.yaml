@@ -1,0 +1,28 @@
+# Release Readiness - Project Intelligence
+name: release-readiness
+description: "Aggregator skill: Go/No-Go decision based on all other intelligence signals."
+author: "PIM"
+
+# Critical variables from bmm config
+config_source: "{project-root}/_bmad/bmm/config.yaml"
+planning_artifacts: "{config_source}:planning_artifacts"
+implementation_artifacts: "{config_source}:implementation_artifacts"
+
+# Workflow components
+installed_path: "{project-root}/_bmad/pim/workflows/release-readiness"
+instructions: "{installed_path}/instructions.md"
+
+# Inputs
+sprint_status_file: "{implementation_artifacts}/sprint-status.yaml"
+epics_file: "{planning_artifacts}/epics.md"
+
+# Smart input file patterns
+input_file_patterns:
+  sprint_status:
+    description: "Core status data"
+    whole: "{implementation_artifacts}/sprint-status.yaml"
+    load_strategy: "FULL_LOAD"
+  epics:
+    description: "Scope definition"
+    whole: "{planning_artifacts}/epics.md"
+    load_strategy: "FULL_LOAD"

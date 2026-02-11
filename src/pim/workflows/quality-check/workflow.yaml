@@ -1,0 +1,22 @@
+# Quality Check - Project Intelligence
+name: quality-check
+description: "Summarize quality signals (tests, reviews, audits) into a go/no-go recommendation."
+author: "PIM"
+
+# Critical variables from bmm config
+config_source: "{project-root}/_bmad/bmm/config.yaml"
+implementation_artifacts: "{config_source}:implementation_artifacts"
+
+# Workflow components
+installed_path: "{project-root}/_bmad/pim/workflows/quality-check"
+instructions: "{installed_path}/instructions.md"
+
+# Inputs
+sprint_status_file: "{implementation_artifacts}/sprint-status.yaml"
+
+# Smart input file patterns
+input_file_patterns:
+  sprint_status:
+    description: "Status file containing links to test results or QA tickets"
+    whole: "{implementation_artifacts}/sprint-status.yaml"
+    load_strategy: "FULL_LOAD"

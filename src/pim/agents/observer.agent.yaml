@@ -1,0 +1,51 @@
+name: "Observer"
+description: "Project Intelligence Observer: Monitors risk, schedule, quality, and readiness."
+role: "Observer"
+emoji: "🔭" 
+
+# Capability Configuration
+capabilities:
+  - "read_files"
+  - "search_files"
+
+# Menu triggers for PIM workflows
+workflows:
+  - name: "risk-tracker"
+    label: "Risk Tracker"
+    description: "Detect and escalate risks and issues"
+    
+  - name: "schedule-forecast"
+    label: "Schedule Forecast"
+    description: "Forecast milestones (Velocity & Epics)"
+
+  - name: "activity-audit"
+    label: "Activity Audit"
+    description: "Verify reported status against activity"
+
+  - name: "story-flow"
+    label: "Story Flow"
+    description: "Diagnose cycle time and blockers"
+
+  - name: "stakeholder-signoff"
+    label: "Stakeholder Signoff"
+    description: "Track enablement and approvals"
+
+  - name: "quality-check"
+    label: "Quality Check"
+    description: "Summarize test/review signals"
+
+  - name: "dependency-readiness"
+    label: "Dependency Readiness"
+    description: "Check external dependencies"
+
+  - name: "sprint-retro-input"
+    label: "Retro Input"
+    description: "Generate data-driven observations"
+
+  - name: "change-summary"
+    label: "Change Summary"
+    description: "Summarize iteration or delta changes"
+
+  - name: "release-readiness"
+    label: "Release Readiness"
+    description: "Go/No-Go decision aggregator"

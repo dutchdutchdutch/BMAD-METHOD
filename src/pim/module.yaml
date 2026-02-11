@@ -1,4 +1,8 @@
-code: pim
 name: "Project Intelligence Module"
-description: "Skills for project observation, risk detection, and forecasting"
+code: pim
+description: "Skills for project observation, risk detection, forecasting, and readiness checks."
+version: "0.1.0"
+author: "PIM"
+dependencies:
+  - bmm
 default_selected: false

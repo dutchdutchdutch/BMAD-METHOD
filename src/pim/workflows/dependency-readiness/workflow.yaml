@@ -1,0 +1,28 @@
+# Dependency Readiness - Project Intelligence
+name: dependency-readiness
+description: "Check status of external dependencies (vendors, partners, infrastructure)."
+author: "PIM"
+
+# Critical variables from bmm config
+config_source: "{project-root}/_bmad/bmm/config.yaml"
+planning_artifacts: "{config_source}:planning_artifacts"
+implementation_artifacts: "{config_source}:implementation_artifacts"
+
+# Workflow components
+installed_path: "{project-root}/_bmad/pim/workflows/dependency-readiness"
+instructions: "{installed_path}/instructions.md"
+
+# Inputs
+epics_file: "{planning_artifacts}/epics.md"
+sprint_status_file: "{implementation_artifacts}/sprint-status.yaml"
+
+# Smart input file patterns
+input_file_patterns:
+  epics:
+    description: "High level scope implies dependencies"
+    whole: "{planning_artifacts}/epics.md"
+    load_strategy: "FULL_LOAD"
+  sprint_status:
+    description: "Status of work may reveal dependency blockers"
+    whole: "{implementation_artifacts}/sprint-status.yaml"
+    load_strategy: "FULL_LOAD"
